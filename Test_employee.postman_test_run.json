@@ -1,0 +1,400 @@
+{
+	"id": "f03d6dda-ef8e-1979-271d-42ea3fbc4d6e",
+	"name": "Test_employee",
+	"allTests": [],
+	"timestamp": 1519613572346,
+	"collection_id": "90df5467-e083-e5d5-af70-74f97106b682",
+	"folder_id": 0,
+	"target_type": "collection",
+	"environment_id": "0",
+	"data": null,
+	"delay": 0,
+	"count": 1,
+	"collection": {
+		"id": "90df5467-e083-e5d5-af70-74f97106b682",
+		"name": "Test_employee",
+		"description": "",
+		"order": [
+			"37bf3a1c-c194-7c83-782f-6b4124775d10",
+			"eb31327e-5e2d-0b73-de4a-fd61e314f940"
+		],
+		"folders": [],
+		"folders_order": [],
+		"requests": [
+			{
+				"id": "37bf3a1c-c194-7c83-782f-6b4124775d10",
+				"headers": "",
+				"headerData": [],
+				"url": "http://dummy.restapiexample.com/api/v1/employees",
+				"queryParams": [],
+				"preRequestScript": null,
+				"pathVariables": {},
+				"pathVariableData": [],
+				"method": "GET",
+				"data": null,
+				"dataMode": "params",
+				"tests": "tests[\"Response time is less than 200ms\"] = responseTime < 2000;\n\ntests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Content-Type is present\"] = postman.getResponseHeader(\"Content-Type\");\n\n\nlet schema = {\n  \"type\" : \"array\",\n  \"items\" :[{\n      \"type\": \"object\",\n      \"required\": [\"id\",\"employee_name\",\"employee_salary\",\"employee_age\",\"profile_image\"],\n      \"properties\":{\n          \"id\":{\"type\":\"string\"},\n          \"employee_name\":{\"type\":\"string\"},\n          \"employee_salary\": {\"type\":\"string\"},\n          \"employee_age\" : {\"type\":\"string\"},\n          \"profile_image\" : {\"type\":\"string\"}\n      }\n  }\n      ]\n};\n\nconsole.log(\"Validation failed: \", tv4.error);\n\n\nvar body = JSON.parse(responseBody);\ntests[\"Employee ID is number\"] = typeof(body.id) === \"number\";\ntests[\"Employee name is string\"] = typeof(body.employee_name) !== \"number\";\ntests[\"Employee salary is number\"] = typeof(body.employee_salary) === \"number\";\ntests[\"Employee age is number\"] = typeof(body.employee_age) === \"number\";\ntests[\"Profile image is string\"] = typeof(body.employee_age) !== \"number\";\n\n\n\n\n\n",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1519613709913,
+				"name": "http://dummy.restapiexample.com/api/v1/employees",
+				"description": "test_employee",
+				"collectionId": "90df5467-e083-e5d5-af70-74f97106b682",
+				"responses": []
+			},
+			{
+				"id": "eb31327e-5e2d-0b73-de4a-fd61e314f940",
+				"headers": "",
+				"headerData": [],
+				"url": "http://dummy.restapiexample.com/api/v1/employee/2",
+				"queryParams": [],
+				"pathVariables": {},
+				"pathVariableData": [],
+				"preRequestScript": null,
+				"method": "GET",
+				"collectionId": "90df5467-e083-e5d5-af70-74f97106b682",
+				"data": null,
+				"dataMode": "params",
+				"name": "http://dummy.restapiexample.com/api/v1/employee/2",
+				"description": "iterate",
+				"descriptionFormat": "html",
+				"time": 1519454203802,
+				"version": 2,
+				"responses": [],
+				"tests": "tests[\"Response time is less than 200ms\"] = responseTime < 2000;\n\ntests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Content-Type is present\"] = postman.getResponseHeader(\"Content-Type\");\n\n\nlet schema = {\n  \"type\" : \"array\",\n  \"items\" :[{\n      \"type\": \"object\",\n      \"required\": [\"id\",\"employee_name\",\"employee_salary\",\"employee_age\",\"profile_image\"],\n      \"properties\":{\n          \"id\":{\"type\":\"string\"},\n          \"employee_name\":{\"type\":\"string\"},\n          \"employee_salary\": {\"type\":\"string\"},\n          \"employee_age\" : {\"type\":\"string\"},\n          \"profile_image\" : {\"type\":\"string\"}\n      }\n  }\n      ]\n};\n\nconsole.log(\"Validation failed: \", tv4.error);\n\n\nvar body = JSON.parse(responseBody);\ntests[\"Employee ID is number\"] = typeof(body.id) === \"number\";\ntests[\"Employee name is string\"] = typeof(body.employee_name) !== \"number\";\ntests[\"Employee salary is number\"] = typeof(body.employee_salary) === \"number\";\ntests[\"Employee age is number\"] = typeof(body.employee_age) === \"number\";\ntests[\"Profile image is string\"] = typeof(body.employee_age) !== \"number\";\n\n\n\n\n\n",
+				"currentHelper": "normal",
+				"helperAttributes": {}
+			}
+		],
+		"timestamp": 1519449335016,
+		"synced": false,
+		"syncedFilename": "",
+		"remote_id": 0,
+		"remoteLink": "",
+		"remoteLinkUpdatedAt": null,
+		"public": false,
+		"owner": "2946700",
+		"subscribed": false,
+		"createdAt": 1519449335016,
+		"updatedAt": 1519454203851,
+		"write": true,
+		"published": false,
+		"favorite": false,
+		"permissions": {},
+		"syncedPermissions": {},
+		"sharedWithTeam": false
+	},
+	"folder": null,
+	"environment": null,
+	"globals": [],
+	"results": [
+		{
+			"id": "37bf3a1c-c194-7c83-782f-6b4124775d10",
+			"name": "http://dummy.restapiexample.com/api/v1/employees",
+			"url": "http://dummy.restapiexample.com/api/v1/employees",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {
+				"Response time is less than 200ms": true,
+				"Status code is 200": true,
+				"Content-Type is present": "text/html; charset=UTF-8",
+				"Employee ID is number": false,
+				"Employee name is string": true,
+				"Employee salary is number": false,
+				"Employee age is number": false,
+				"Profile image is string": true
+			},
+			"testPassFailCounts": {
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Employee ID is number": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Employee name is string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Employee salary is number": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Employee age is number": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Profile image is string": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1080
+			],
+			"allTests": [
+				{
+					"Response time is less than 200ms": true,
+					"Status code is 200": true,
+					"Content-Type is present": "text/html; charset=UTF-8",
+					"Employee ID is number": false,
+					"Employee name is string": true,
+					"Employee salary is number": false,
+					"Employee age is number": false,
+					"Profile image is string": true
+				}
+			],
+			"time": 1080,
+			"totalRequestTime": 1080,
+			"iterationResults": {}
+		},
+		{
+			"id": "eb31327e-5e2d-0b73-de4a-fd61e314f940",
+			"name": "http://dummy.restapiexample.com/api/v1/employee/2",
+			"url": "http://dummy.restapiexample.com/api/v1/employee/2",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {
+				"Response time is less than 200ms": true,
+				"Status code is 200": true,
+				"Content-Type is present": "text/html; charset=UTF-8",
+				"Employee ID is number": false,
+				"Employee name is string": true,
+				"Employee salary is number": false,
+				"Employee age is number": false,
+				"Profile image is string": true
+			},
+			"testPassFailCounts": {
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Employee ID is number": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Employee name is string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Employee salary is number": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Employee age is number": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Profile image is string": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				920
+			],
+			"allTests": [
+				{
+					"Response time is less than 200ms": true,
+					"Status code is 200": true,
+					"Content-Type is present": "text/html; charset=UTF-8",
+					"Employee ID is number": false,
+					"Employee name is string": true,
+					"Employee salary is number": false,
+					"Employee age is number": false,
+					"Profile image is string": true
+				}
+			],
+			"time": 920,
+			"totalRequestTime": 920,
+			"iterationResults": {}
+		}
+	],
+	"totalPass": 10,
+	"totalFail": 6,
+	"totalTime": 2000,
+	"lifecycle": "idle",
+	"willStop": false,
+	"requests": [
+		{
+			"name": "http://dummy.restapiexample.com/api/v1/employees",
+			"id": "37bf3a1c-c194-7c83-782f-6b4124775d10",
+			"url": "http://dummy.restapiexample.com/api/v1/employees",
+			"time": 1080,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Employee ID is number": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Employee name is string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Employee salary is number": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Employee age is number": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Profile image is string": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Response time is less than 200ms",
+				"Status code is 200",
+				"Content-Type is present",
+				"Employee ID is number",
+				"Employee name is string",
+				"Employee salary is number",
+				"Employee age is number",
+				"Profile image is string"
+			],
+			"gridData": [
+				[
+					true,
+					true,
+					true,
+					false,
+					true,
+					false,
+					false,
+					true
+				]
+			],
+			"tests": {
+				"Response time is less than 200ms": true,
+				"Status code is 200": true,
+				"Content-Type is present": true,
+				"Employee ID is number": false,
+				"Employee name is string": true,
+				"Employee salary is number": false,
+				"Employee age is number": false,
+				"Profile image is string": true
+			}
+		},
+		{
+			"name": "http://dummy.restapiexample.com/api/v1/employee/2",
+			"id": "eb31327e-5e2d-0b73-de4a-fd61e314f940",
+			"url": "http://dummy.restapiexample.com/api/v1/employee/2",
+			"time": 920,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Employee ID is number": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Employee name is string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Employee salary is number": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Employee age is number": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Profile image is string": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Response time is less than 200ms",
+				"Status code is 200",
+				"Content-Type is present",
+				"Employee ID is number",
+				"Employee name is string",
+				"Employee salary is number",
+				"Employee age is number",
+				"Profile image is string"
+			],
+			"gridData": [
+				[
+					true,
+					true,
+					true,
+					false,
+					true,
+					false,
+					false,
+					true
+				]
+			],
+			"tests": {
+				"Response time is less than 200ms": true,
+				"Status code is 200": true,
+				"Content-Type is present": true,
+				"Employee ID is number": false,
+				"Employee name is string": true,
+				"Employee salary is number": false,
+				"Employee age is number": false,
+				"Profile image is string": true
+			}
+		}
+	],
+	"synced": false
+}
